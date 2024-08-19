@@ -1,0 +1,154 @@
+[gd_scene load_steps=4 format=3 uid="uid://btj6yw6exex5d"]
+
+[ext_resource type="Script" path="res://objects/player/settings_button.gd" id="1_7ej8j"]
+[ext_resource type="FontFile" uid="uid://ca3w6oo4grxfj" path="res://fonts/BebasNeue-Regular.ttf" id="2_6wvu3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oah8t"]
+bg_color = Color(0.07, 0.07, 0.07, 0.458824)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="SettingsButton" type="Button"]
+text = "Settings"
+script = ExtResource("1_7ej8j")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Settings" type="Control" parent="Node"]
+visible = false
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -574.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Node/Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1598.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.27451)
+
+[node name="PanelContainer" type="PanelContainer" parent="Node/Settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.045
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.169998
+offset_top = 18.0
+offset_right = -26.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oah8t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node/Settings/PanelContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Node/Settings/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_6wvu3")
+theme_override_font_sizes/font_size = 151
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Node/Settings/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Title2" type="Label" parent="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_6wvu3")
+theme_override_font_sizes/font_size = 24
+text = "Portals"
+horizontal_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Portals will be rendered at half of the original resolution, making the portals render 4x faster, at a cost of noticable transitions when traveling though portals."
+text = "Half Portal Resolution"
+
+[node name="Title3" type="Label" parent="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_6wvu3")
+theme_override_font_sizes/font_size = 24
+text = "Accessibility"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sensitivity"
+
+[node name="HSlider" type="HSlider" parent="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 50.0
+tick_count = 7
+
+[node name="Title4" type="Label" parent="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_6wvu3")
+theme_override_font_sizes/font_size = 24
+text = "User Interface"
+horizontal_alignment = 1
+
+[node name="FPSToggle" type="CheckButton" parent="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Shows the frames per second of the game"
+text = "Show FPS"
+
+[node name="TimerToggle" type="CheckButton" parent="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Shows a timer that starts when the player moves, and stops when the player collects all the orbs."
+text = "Show Level Timer"
+
+[node name="CloseButton" type="Button" parent="Node/Settings"]
+layout_mode = 2
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 228.0
+offset_bottom = 95.0
+text = "X"
+flat = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="toggled" from="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="drag_ended" from="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_drag_ended"]
+[connection signal="toggled" from="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FPSToggle" to="." method="_on_fps_toggle_toggled"]
+[connection signal="toggled" from="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TimerToggle" to="." method="_on_timer_toggle_toggled"]
+[connection signal="pressed" from="Node/Settings/CloseButton" to="." method="_on_close_button_pressed"]

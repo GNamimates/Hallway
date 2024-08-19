@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://7qv0vmax650i"]
+
+[ext_resource type="FontFile" uid="uid://cy502k4luym8i" path="res://fonts/NewAmsterdam-Regular.ttf" id="1_ycr58"]
+[ext_resource type="Script" path="res://objects/UI/levelButton/level_button.gd" id="2_djf1g"]
+
+[node name="LevelButton" type="Button"]
+custom_minimum_size = Vector2(64, 64)
+theme_override_fonts/font = ExtResource("1_ycr58")
+theme_override_font_sizes/font_size = 38
+text = "?"
+script = ExtResource("2_djf1g")

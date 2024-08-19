@@ -1,0 +1,206 @@
+[gd_scene load_steps=9 format=3 uid="uid://dklx8id5n584t"]
+
+[ext_resource type="Script" path="res://objects/player/player.gd" id="1_0m7px"]
+[ext_resource type="Script" path="res://objects/Camera.gd" id="2_q54db"]
+[ext_resource type="FontFile" uid="uid://ca3w6oo4grxfj" path="res://fonts/BebasNeue-Regular.ttf" id="3_fh7e7"]
+[ext_resource type="Script" path="res://objects/player/pause.gd" id="3_k71e6"]
+[ext_resource type="PackedScene" uid="uid://btj6yw6exex5d" path="res://objects/UI/settingsButton/settings_button.tscn" id="5_j0otj"]
+[ext_resource type="AudioStream" uid="uid://bij5d5a5ehwnb" path="res://audio/complete.ogg" id="6_yutra"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_h2sfk"]
+radius = 0.2
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kffac"]
+height = 1.0
+radius = 0.4
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_0m7px")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("SphereShape3D_h2sfk")
+
+[node name="Feet1" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.25)
+target_position = Vector3(0, -4, 0)
+
+[node name="Feet2" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1.5, 0.25)
+target_position = Vector3(0, -4, 0)
+
+[node name="Feet" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+target_position = Vector3(0, -4, 0)
+
+[node name="Feet3" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 1.5, 0.25)
+target_position = Vector3(0, -4, 0)
+
+[node name="Neck" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Neck"]
+current = true
+script = ExtResource("2_q54db")
+
+[node name="LeftStepAudioStreamPlayer" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, 0)
+volume_db = -19.0
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="RightStepAudioStreamPlayer" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0)
+volume_db = -19.0
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="Interacter" type="Node" parent="."]
+
+[node name="Arm" type="Node3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.5, 0)
+
+[node name="Hand" type="Node3D" parent="Arm"]
+transform = Transform3D(-2, 0, 3.01992e-07, 0, 2, 0, -3.01992e-07, 0, -2, 0.7, -0.75, -1)
+
+[node name="CanvasLayer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelSeparator" type="Label" parent="CanvasLayer"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -160.0
+offset_right = 40.0
+offset_bottom = -137.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+text = "/"
+horizontal_alignment = 1
+
+[node name="LabelFound" type="Label" parent="CanvasLayer"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -160.0
+offset_right = 568.0
+offset_bottom = -137.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+text = "0"
+
+[node name="LabelWin" type="Label" parent="CanvasLayer"]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -232.0
+offset_bottom = -209.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 1, 0.0666666, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "All green Orbs captured!"
+horizontal_alignment = 1
+
+[node name="LabelTotal" type="Label" parent="CanvasLayer"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -568.0
+offset_top = -160.0
+offset_right = -8.0
+offset_bottom = -137.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+text = "0"
+horizontal_alignment = 2
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_kffac")
+
+[node name="Pause" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -576.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_k71e6")
+
+[node name="ColorRect" type="ColorRect" parent="Pause"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 576.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.129412)
+
+[node name="CenterContainer" type="CenterContainer" parent="Pause"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause/CenterContainer"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Pause/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_fh7e7")
+theme_override_font_sizes/font_size = 151
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="Pause/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Continue"
+
+[node name="SettingsButton" parent="Pause/CenterContainer/VBoxContainer" instance=ExtResource("5_j0otj")]
+layout_mode = 2
+
+[node name="Back2MainMenuButton" type="Button" parent="Pause/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back to Main Menu"
+
+[node name="Complete" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_yutra")
+
+[connection signal="pressed" from="Pause/CenterContainer/VBoxContainer/ContinueButton" to="Pause" method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Pause/CenterContainer/VBoxContainer/Back2MainMenuButton" to="Pause" method="_on_back_2_main_menu_button_pressed"]

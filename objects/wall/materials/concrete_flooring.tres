@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://wt7odut2tg8u"]
+
+[ext_resource type="Texture2D" uid="uid://c8miyac0vgwwj" path="res://objects/wall/materials/textures/concrete_flooring.png" id="1_i7d4k"]
+[ext_resource type="Texture2D" uid="uid://rt2tcesn65yu" path="res://objects/wall/materials/textures/concrete_flooring_n.png" id="2_6c6pu"]
+
+[resource]
+albedo_texture = ExtResource("1_i7d4k")
+normal_enabled = true
+normal_scale = 0.32
+normal_texture = ExtResource("2_6c6pu")
+uv1_offset = Vector3(-4.5, -0.5, -4.5)
+uv1_triplanar = true
+texture_filter = 2

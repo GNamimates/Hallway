@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cns2g0524lvn1"]
+
+[ext_resource type="Script" path="res://objects/wall/wall.gd" id="1_lyhse"]
+[ext_resource type="Texture2D" uid="uid://bgglqug5ett1t" path="res://icon.svg" id="2_xx1kf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uqwum"]
+albedo_texture = ExtResource("2_xx1kf")
+uv1_offset = Vector3(-0.5, -0.5, -4.5)
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nqahu"]
+size = Vector3(1, 1, 9)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kc170"]
+size = Vector3(1, 1, 9)
+
+[node name="Wall" type="StaticBody3D"]
+script = ExtResource("1_lyhse")
+dimensions = Vector3(1, 1, 9)
+material = SubResource("StandardMaterial3D_uqwum")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_nqahu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_uqwum")
+mesh = SubResource("BoxMesh_kc170")

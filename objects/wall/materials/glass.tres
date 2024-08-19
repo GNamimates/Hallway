@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://rgvsd3byqsow"]
+
+[ext_resource type="Shader" path="res://shaders/glass.gdshader" id="1_8opu8"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_8opu8")
+shader_parameter/refraction = 0.046
+shader_parameter/chromatic_aberration = 0.141

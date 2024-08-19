@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjw5n4nyles4o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhlh8"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 7.75
+
+[sub_resource type="BoxMesh" id="BoxMesh_lcre1"]
+material = SubResource("StandardMaterial3D_hhlh8")
+size = Vector3(2.5, 0.07, 0.5)
+
+[node name="Lamp" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.46986, 0)
+gi_mode = 0
+mesh = SubResource("BoxMesh_lcre1")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+light_color = Color(1, 0.958, 0.91, 1)
+light_energy = 0.5
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+distance_fade_length = 20.0
+omni_range = 24.468

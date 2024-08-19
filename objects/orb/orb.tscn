@@ -1,0 +1,100 @@
+[gd_scene load_steps=14 format=3 uid="uid://dgosnbsq0g0h3"]
+
+[ext_resource type="Script" path="res://objects/orb/orb.gd" id="1_bonek"]
+[ext_resource type="AudioStream" uid="uid://cap54hbly8ph" path="res://audio/collect orb.ogg" id="2_8qb67"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_o77sq"]
+radius = 0.67164
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fcjp0"]
+cull_mode = 1
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+emission_energy_multiplier = 7.86
+
+[sub_resource type="BoxMesh" id="BoxMesh_yauu3"]
+material = SubResource("StandardMaterial3D_fcjp0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1x5ao"]
+cull_mode = 1
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.73, 1, 0.73, 1)
+emission_energy_multiplier = 9.44
+
+[sub_resource type="BoxMesh" id="BoxMesh_fai7o"]
+material = SubResource("StandardMaterial3D_1x5ao")
+
+[sub_resource type="Curve" id="Curve_sldrr"]
+_data = [Vector2(0, 1), 0.0, 3.76124, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(0.882576, 0), -0.0816704, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_kphui"]
+curve = SubResource("Curve_sldrr")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ouhpc"]
+particle_flag_align_y = true
+emission_shape = 1
+emission_sphere_radius = 0.5
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = -2.23517e-06
+radial_accel_min = -38.66
+radial_accel_max = -38.66
+tangential_accel_min = 7.81
+tangential_accel_max = 7.81
+scale_curve = SubResource("CurveTexture_kphui")
+turbulence_noise_strength = 0.34
+turbulence_noise_scale = 4.987
+
+[sub_resource type="Curve" id="Curve_6lbyh"]
+_data = [Vector2(0, 0), 0.0, 11.6084, 0, 0, Vector2(0.266892, 1), 0.0, 0.0, 0, 0, Vector2(0.986487, 0.01703), -1.92739, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oatcn"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 2.4, 0, 1)
+use_particle_trails = true
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_5t028"]
+material = SubResource("StandardMaterial3D_oatcn")
+radius = 0.04
+radial_steps = 3
+cap_bottom = false
+curve = SubResource("Curve_6lbyh")
+
+[node name="Orb" type="Area3D"]
+script = ExtResource("1_bonek")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_o77sq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0, 1, 0, 1)
+light_energy = 0.5
+distance_fade_enabled = true
+
+[node name="MeshOut" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.497818, -0.0132038, -0.0447518, 0, -0.479562, 0.141492, -0.0466591, 0.140875, 0.477469, 0, 0, 0)
+mesh = SubResource("BoxMesh_yauu3")
+
+[node name="MeshIn" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.248909, -0.0066019, -0.0223759, 0, -0.239781, 0.070746, -0.0233295, 0.0704375, 0.238734, 0, 0, 0)
+mesh = SubResource("BoxMesh_fai7o")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00498939, 0, 0)
+amount = 16
+lifetime = 2.0
+trail_enabled = true
+process_material = SubResource("ParticleProcessMaterial_ouhpc")
+draw_pass_1 = SubResource("TubeTrailMesh_5t028")
+
+[node name="Collect" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_8qb67")
+volume_db = -19.341
+attenuation_filter_db = 0.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

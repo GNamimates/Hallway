@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c4leqpnqb35gy"
+path="res://.godot/imported/awkward_cube.obj-bd65b3ed02c13f1be7e130259e8b3fb7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/awkward_cube.obj-bd65b3ed02c13f1be7e130259e8b3fb7.mesh"]
+
+source_file="res://objects/wall/awkward_cube.obj"
+dest_files=["res://.godot/imported/awkward_cube.obj-bd65b3ed02c13f1be7e130259e8b3fb7.mesh", "res://.godot/imported/awkward_cube.obj-bd65b3ed02c13f1be7e130259e8b3fb7.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

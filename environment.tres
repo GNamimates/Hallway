@@ -1,0 +1,53 @@
+[gd_resource type="Environment" load_steps=5 format=3 uid="uid://drulnpmvmtpbc"]
+
+[sub_resource type="Gradient" id="Gradient_7oij5"]
+offsets = PackedFloat32Array(0.0442478, 0.619469, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.6816, 0.693907, 0.71, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jk3ds"]
+gradient = SubResource("Gradient_7oij5")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xhn0t"]
+
+[sub_resource type="Sky" id="Sky_crgp5"]
+sky_material = SubResource("ProceduralSkyMaterial_xhn0t")
+
+[resource]
+background_mode = 2
+background_color = Color(0.344076, 0.344076, 0.344076, 1)
+background_energy_multiplier = 0.3
+background_canvas_max_layer = 1000
+sky = SubResource("Sky_crgp5")
+ambient_light_source = 1
+reflected_light_source = 2
+tonemap_mode = 2
+tonemap_white = 16.0
+ssao_enabled = true
+ssao_light_affect = 1.0
+ssao_ao_channel_affect = 1.0
+ssil_normal_rejection = 0.0
+sdfgi_cascades = 2
+sdfgi_min_cell_size = 0.78125
+sdfgi_cascade0_distance = 50.0
+sdfgi_max_distance = 200.0
+sdfgi_y_scale = 2
+glow_enabled = true
+glow_levels/2 = 0.69
+glow_levels/3 = 0.58
+glow_levels/4 = 0.37
+glow_levels/5 = 0.23
+glow_levels/6 = 0.32
+glow_levels/7 = 0.03
+glow_normalized = true
+glow_intensity = 2.23
+glow_strength = 0.59
+glow_blend_mode = 1
+glow_hdr_threshold = 4.0
+fog_enabled = true
+fog_light_color = Color(0.0215876, 0.0578224, 0.108212, 1)
+fog_density = 0.0005
+volumetric_fog_anisotropy = 0.69
+volumetric_fog_length = 6.25
+adjustment_enabled = true
+adjustment_saturation = 1.06
+adjustment_color_correction = SubResource("GradientTexture1D_jk3ds")
