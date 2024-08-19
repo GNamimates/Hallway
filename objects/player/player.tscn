@@ -44,6 +44,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck"]
 current = true
+near = 0.01
 script = ExtResource("2_q54db")
 
 [node name="LeftStepAudioStreamPlayer" type="AudioStreamPlayer3D" parent="."]
@@ -211,8 +212,13 @@ layout_mode = 2
 layout_mode = 2
 text = "Back to Main Menu"
 
+[node name="RestartButton" type="Button" parent="Pause/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Restart Level"
+
 [node name="Complete" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_yutra")
 
 [connection signal="pressed" from="Pause/CenterContainer/VBoxContainer/ContinueButton" to="Pause" method="_on_continue_button_pressed"]
 [connection signal="pressed" from="Pause/CenterContainer/VBoxContainer/Back2MainMenuButton" to="Pause" method="_on_back_2_main_menu_button_pressed"]
+[connection signal="pressed" from="Pause/CenterContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

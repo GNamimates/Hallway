@@ -8,8 +8,7 @@ void vertex() {
 }
 
 void fragment() {
-	//ALPHA_HASH_SCALE = 0.01;
+	//if (!SMOOTHER_PORTAL_TRANSITIONS){ALPHA_HASH_SCALE = 0.01;}
 	ALPHA = COLOR.x;
 	ALBEDO = texture(portal,SCREEN_UV).rgb;
 }
-

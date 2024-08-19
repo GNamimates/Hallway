@@ -26,6 +26,7 @@ func _on_close_button_pressed() -> void:
 
 func _on_pressed() -> void:
 	settings_menu.visible = true
+	$Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShadowButton.button_pressed = Settings.settings.shadows
 	$Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/CheckButton.button_pressed = Settings.settings.half_portal_resolution
 	$Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/HSlider.set_value_no_signal(Settings.settings.sensitivity)
 	$Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FPSToggle.button_pressed = Settings.settings.show_fps
@@ -33,3 +34,7 @@ func _on_pressed() -> void:
 
 
 
+
+
+func _on_shadow_button_toggled(toggled_on:bool) -> void:
+	Settings.set_setting("shadow",toggled_on)

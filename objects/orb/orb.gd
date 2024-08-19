@@ -4,12 +4,16 @@ extends Area3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if %Player is Player:
-		%Player.add_total_orb()
+	if Transition.player is Player:
+		Transition.player.add_total_orb()
+	$OmniLight3D.omni_range = 5 * scale.x
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Engine.is_editor_hint():
+		$OmniLight3D.omni_range = 5 * scale.x
+		
 	var t = float(Time.get_ticks_msec())/200
 	$MeshOut.rotation.x = t*0.3
 	$MeshOut.rotation.y = t

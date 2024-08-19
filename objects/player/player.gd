@@ -31,6 +31,9 @@ var is_grounded = false
 var _last_step_distance = 0
 var foot_order = false
 
+func _enter_tree() -> void:
+	Transition.player = self
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -122,3 +125,7 @@ func _input(event):
 			eye_rotation.x = clampf(eye_rotation.x - event.relative.y * sensitivity,-89.9,89.9)
 			neck.rotation_degrees.y = eye_rotation.y
 			camera.rotation_degrees.x = eye_rotation.x
+
+
+func _on_restart_button_pressed() -> void:
+	Transition.restart()

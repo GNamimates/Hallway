@@ -1,6 +1,8 @@
 extends ColorRect
 
 var force_to_level_selection = false
+var current_package
+var player
 
 func _ready() -> void:
    mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -16,12 +18,17 @@ var target_scene : PackedScene
 
 func set_scene(new_scene : PackedScene) -> void:
    if !is_transitioning:
+      player = null
       target_scene = new_scene
       is_transitioning = true
       get_tree().create_tween().tween_method(_tween,0.0,1.0,0.5)
 
 func set_scene_to_main() -> void:
-   set_scene(preload("res://main.tscn"))
+   set_scene(load("res://main.tscn"))
+
+func restart():
+   if target_scene is PackedScene:
+      set_scene(target_scene)
 
 func _tween(x) -> void:
    color = Color(0,0,0,x)
@@ -29,4 +36,4 @@ func _tween(x) -> void:
       get_tree().change_scene_to_packed(target_scene)
       Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
       get_tree().create_tween().tween_method(_tween,1.0,0.0,0.5)
-      is_transitioning = false
+      is_transitioning = false 

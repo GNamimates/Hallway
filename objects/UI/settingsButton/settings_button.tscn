@@ -4,14 +4,14 @@
 [ext_resource type="FontFile" uid="uid://ca3w6oo4grxfj" path="res://fonts/BebasNeue-Regular.ttf" id="2_6wvu3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oah8t"]
-bg_color = Color(0.07, 0.07, 0.07, 0.458824)
+bg_color = Color(0.07, 0.07, 0.07, 0.658824)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [node name="SettingsButton" type="Button"]
-text = "Settings"
+text = "Options"
 script = ExtResource("1_7ej8j")
 
 [node name="Node" type="Node" parent="."]
@@ -59,7 +59,7 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_6wvu3")
 theme_override_font_sizes/font_size = 151
-text = "SETTINGS"
+text = "OPTIONS"
 horizontal_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Node/Settings/PanelContainer/VBoxContainer"]
@@ -83,7 +83,7 @@ layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_6wvu3")
 theme_override_font_sizes/font_size = 24
-text = "Portals"
+text = "Graphics"
 horizontal_alignment = 1
 
 [node name="CheckButton" type="CheckButton" parent="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
@@ -91,6 +91,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 tooltip_text = "Portals will be rendered at half of the original resolution, making the portals render 4x faster, at a cost of noticable transitions when traveling though portals."
 text = "Half Portal Resolution"
+
+[node name="ShadowButton" type="CheckButton" parent="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Portals will be rendered at half of the original resolution, making the portals render 4x faster, at a cost of noticable transitions when traveling though portals."
+text = "Light Casts Shadows"
 
 [node name="Title3" type="Label" parent="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -149,6 +155,7 @@ flat = true
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="toggled" from="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="toggled" from="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ShadowButton" to="." method="_on_shadow_button_toggled"]
 [connection signal="value_changed" from="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="toggled" from="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FPSToggle" to="." method="_on_fps_toggle_toggled"]
 [connection signal="toggled" from="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TimerToggle" to="." method="_on_timer_toggle_toggled"]

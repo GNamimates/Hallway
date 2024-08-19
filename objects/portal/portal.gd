@@ -22,14 +22,15 @@ func set_pair(new):
 
 func _ready() -> void:
 	Settings.settings_changed.connect(_setting_changed)
-	if %Player is Player:
-		player = %Player
+	if Transition.player is Player:
+		player = Transition.player
 	$Mesh.material_override = $Mesh.material_override.duplicate()
 	$Mesh.material_override.set_shader_parameter("portal",$SubViewport.get_texture())
 	
 	# Resizing subviewports
-	if Engine.is_editor_hint(): EditorInterface.get_editor_viewport_3d(0).size_changed.connect(_resized)
-	else: get_tree().root.size_changed.connect(_resized)
+	#if Engine.is_editor_hint(): EditorInterface.get_editor_viewport_3d(0).size_changed.connect(_resized)
+	#else:
+	get_tree().root.size_changed.connect(_resized)
 	_resized()
 	if !Engine.is_editor_hint():
 		get_viewport().get_camera_3d().transform_changed.connect(_transform_changed)
@@ -46,14 +47,16 @@ func _transform_changed() -> void:
 	if pair is Portal:
 		# Get camera
 		var cam : Camera3D
-		if Engine.is_editor_hint(): cam = EditorInterface.get_editor_viewport_3d(0).get_camera_3d()
-		else: cam = get_viewport().get_camera_3d()
+		#if Engine.is_editor_hint(): cam = EditorInterface.get_editor_viewport_3d(0).get_camera_3d()
+		#else: 
+		cam = get_viewport().get_camera_3d()
 		
 		if cam.global_position.distance_to(global_position) < 20:
 			$SubViewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
+			visible = true
 		else:
 			$SubViewport.render_target_update_mode = SubViewport.UPDATE_DISABLED
-		
+			visible = false
 		# Camera
 		var self_global_transform = global_transform
 		self_global_transform.basis = self_global_transform.basis.rotated(self_global_transform.basis.y.normalized(),PI)
@@ -88,10 +91,11 @@ func _resized() -> void:
 	var multiplier = 1
 	if Settings.settings.half_portal_resolution:
 		multiplier = 0.5
-	if Engine.is_editor_hint():
-		$SubViewport.size = EditorInterface.get_editor_viewport_3d(0).size * multiplier
-	else:
-		$SubViewport.size = get_tree().root.size * multiplier
+	#if Engine.is_editor_hint():
+	#	$SubViewport.size = EditorInterface.get_editor_viewport_3d(0).size * multiplier
+	#else:
+	
+	$SubViewport.size = get_tree().root.size * multiplier
 
 
 func set_dimensions(new_dimensions : Vector2) -> void:

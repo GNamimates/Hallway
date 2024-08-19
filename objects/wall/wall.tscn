@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cns2g0524lvn1"]
 
 [ext_resource type="Script" path="res://objects/wall/wall.gd" id="1_lyhse"]
-[ext_resource type="Texture2D" uid="uid://bgglqug5ett1t" path="res://icon.svg" id="2_xx1kf"]
+[ext_resource type="Texture2D" uid="uid://ok22dhg0pm7i" path="res://icon.png" id="2_xx1kf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uqwum"]
 albedo_texture = ExtResource("2_xx1kf")
@@ -13,7 +13,7 @@ size = Vector3(1, 1, 9)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4lgx4"]
 albedo_texture = ExtResource("2_xx1kf")
-uv1_offset = Vector3(-1.5, -0.5, -0.5)
+uv1_offset = Vector3(-0.5, -1.5, -1.5)
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_mvdxg"]
@@ -25,6 +25,7 @@ dimensions = Vector3(1, 1, 9)
 material = SubResource("StandardMaterial3D_uqwum")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+visible = false
 shape = SubResource("BoxShape3D_4m3go")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

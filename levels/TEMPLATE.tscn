@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cpmf1vvgmv244"]
+[gd_scene load_steps=33 format=3 uid="uid://cpmf1vvgmv244"]
 
 [ext_resource type="PackedScene" uid="uid://dklx8id5n584t" path="res://objects/player/player.tscn" id="1_aovua"]
 [ext_resource type="PackedScene" uid="uid://cns2g0524lvn1" path="res://objects/wall/wall.tscn" id="1_poakf"]
@@ -7,9 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://k58lemup63ey" path="res://objects/wall/materials/textures/wall_white.png" id="4_p7t1j"]
 [ext_resource type="Texture2D" uid="uid://c5ggjra614pbw" path="res://objects/wall/materials/textures/wall_n.png" id="5_bqigq"]
 [ext_resource type="PackedScene" uid="uid://jkeyedilmoer" path="res://objects/portal/portal.tscn" id="6_1idry"]
-[ext_resource type="PackedScene" uid="uid://dgosnbsq0g0h3" path="res://objects/orb/orb.tscn" id="7_g2kiy"]
 [ext_resource type="Material" uid="uid://dut032u47qwpq" path="res://objects/wall/materials/wall_black.tres" id="7_hlen5"]
 [ext_resource type="Environment" uid="uid://drulnpmvmtpbc" path="res://environment.tres" id="8_jbmps"]
+[ext_resource type="Script" path="res://objects/orb/orb.gd" id="10_d4vyu"]
+[ext_resource type="AudioStream" uid="uid://cap54hbly8ph" path="res://audio/collect orb.ogg" id="11_f11nk"]
 [ext_resource type="Material" uid="uid://cghdstt0fv4lc" path="res://objects/wall/materials/warning.tres" id="12_h2nmv"]
 [ext_resource type="PackedScene" uid="uid://bjw5n4nyles4o" path="res://objects/light/lamp.tscn" id="14_iswb7"]
 
@@ -88,6 +89,68 @@ texture_filter = 2
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_j76mb"]
 exposure_multiplier = 1.045
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_o77sq"]
+radius = 0.67164
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fcjp0"]
+cull_mode = 1
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+emission_energy_multiplier = 7.86
+
+[sub_resource type="BoxMesh" id="BoxMesh_yauu3"]
+material = SubResource("StandardMaterial3D_fcjp0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1x5ao"]
+cull_mode = 1
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.73, 1, 0.73, 1)
+emission_energy_multiplier = 9.44
+
+[sub_resource type="BoxMesh" id="BoxMesh_fai7o"]
+material = SubResource("StandardMaterial3D_1x5ao")
+
+[sub_resource type="Curve" id="Curve_sldrr"]
+_data = [Vector2(0, 1), 0.0, 3.76124, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(0.882576, 0), -0.0816704, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_kphui"]
+curve = SubResource("Curve_sldrr")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ouhpc"]
+particle_flag_align_y = true
+emission_shape = 1
+emission_sphere_radius = 0.5
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = -2.23517e-06
+radial_accel_min = -38.66
+radial_accel_max = -38.66
+tangential_accel_min = 7.81
+tangential_accel_max = 7.81
+scale_curve = SubResource("CurveTexture_kphui")
+turbulence_noise_strength = 0.34
+turbulence_noise_scale = 4.987
+
+[sub_resource type="Curve" id="Curve_6lbyh"]
+_data = [Vector2(0, 0), 0.0, 11.6084, 0, 0, Vector2(0.266892, 1), 0.0, 0.0, 0, 0, Vector2(0.986487, 0.01703), -1.92739, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oatcn"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 2.4, 0, 1)
+use_particle_trails = true
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_5t028"]
+material = SubResource("StandardMaterial3D_oatcn")
+radius = 0.04
+radial_steps = 3
+cap_bottom = false
+curve = SubResource("Curve_6lbyh")
 
 [node name="Node" type="Node"]
 
@@ -174,11 +237,43 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 18.5, 
 pair = NodePath("../Portal2")
 
 [node name="Portal2" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("6_1idry")]
-transform = Transform3D(-4.36896e-08, 0.999502, 0, -0.999502, -4.36896e-08, 0, 0, 0, 0.999502, 9.70489, 5.35, 2.49981)
+transform = Transform3D(-4.36896e-08, 0, 0.999502, 0, 0.999502, 0, -0.999502, 0, -4.36896e-08, 4.5, 2, 0)
 pair = NodePath("../Portal")
 
-[node name="Orb" parent="." instance=ExtResource("7_g2kiy")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.687, 1.075, -3.68134)
+[node name="Orb" type="Area3D" parent="."]
+transform = Transform3D(1.41421, -1.41421, 0, 1.41421, 1.41421, 0, 0, 0, 2, 20.187, 2.075, 1.31866)
+script = ExtResource("10_d4vyu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Orb"]
+shape = SubResource("SphereShape3D_o77sq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Orb"]
+light_color = Color(0, 1, 0, 1)
+light_energy = 0.5
+distance_fade_enabled = true
+omni_range = 9.99997
+
+[node name="MeshOut" type="MeshInstance3D" parent="Orb"]
+transform = Transform3D(-0.350592, 0.0270804, -0.35546, 7.52798e-08, 0.498555, 0.0379818, 0.356491, 0.0266321, -0.349578, 0, 0, 0)
+mesh = SubResource("BoxMesh_yauu3")
+
+[node name="MeshIn" type="MeshInstance3D" parent="Orb"]
+transform = Transform3D(-0.175296, 0.0135402, -0.17773, 3.76399e-08, 0.249277, 0.0189909, 0.178246, 0.0133161, -0.174789, 0, 0, 0)
+mesh = SubResource("BoxMesh_fai7o")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Orb"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.702117, -0.707107, 0)
+amount = 32
+lifetime = 2.0
+local_coords = true
+trail_enabled = true
+process_material = SubResource("ParticleProcessMaterial_ouhpc")
+draw_pass_1 = SubResource("TubeTrailMesh_5t028")
+
+[node name="Collect" type="AudioStreamPlayer3D" parent="Orb"]
+stream = ExtResource("11_f11nk")
+volume_db = -19.341
+attenuation_filter_db = 0.0
 
 [node name="Lamp" parent="." instance=ExtResource("14_iswb7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.46986, 0)
@@ -186,7 +281,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.46986, 0)
 [node name="Node" type="Node" parent="."]
 
 [node name="Wall32" parent="." instance=ExtResource("1_poakf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 2.5, -0.9)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.95, 2.5, 0.9)
 dimensions = Vector3(0.375, 4, 0.1875)
 material = ExtResource("12_h2nmv")
 
@@ -196,7 +291,7 @@ dimensions = Vector3(0.375, 0.1875, 2)
 material = ExtResource("12_h2nmv")
 
 [node name="Wall33" parent="." instance=ExtResource("1_poakf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 2.5, 0.9)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.95, 2.5, -0.9)
 dimensions = Vector3(0.375, 4, 0.1875)
 material = ExtResource("12_h2nmv")
 
@@ -215,21 +310,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 2, 0.9)
 dimensions = Vector3(0.375, 3, 0.1875)
 material = ExtResource("12_h2nmv")
 
-[node name="Wall52" parent="." instance=ExtResource("1_poakf")]
-transform = Transform3D(-4.36896e-08, 0.999502, 4.36896e-08, 0, -4.36896e-08, 0.999502, 0.999502, 4.36896e-08, 1.90973e-15, 9.70489, 4.45045, 2.00006)
-dimensions = Vector3(0.375, 3, 0.1875)
-material = ExtResource("12_h2nmv")
-
-[node name="Wall53" parent="." instance=ExtResource("1_poakf")]
-transform = Transform3D(-4.36896e-08, 0.999502, 4.36896e-08, 0, -4.36896e-08, 0.999502, 0.999502, 4.36896e-08, 1.90973e-15, 11.1042, 5.35, 2.00006)
-dimensions = Vector3(0.375, 0.1875, 2)
-material = ExtResource("12_h2nmv")
-
-[node name="Wall55" parent="." instance=ExtResource("1_poakf")]
-transform = Transform3D(-4.36896e-08, 0.999502, 4.36896e-08, 0, -4.36896e-08, 0.999502, 0.999502, 4.36896e-08, 1.90973e-15, 9.70489, 6.24955, 2.00006)
-dimensions = Vector3(0.375, 3, 0.1875)
-material = ExtResource("12_h2nmv")
-
 [node name="Lamp5" parent="." instance=ExtResource("14_iswb7")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.5, 4.26986, 0.1)
 
@@ -238,3 +318,5 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 6.7
 
 [node name="Lamp7" parent="." instance=ExtResource("14_iswb7")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 6.76986, 0.1)
+
+[connection signal="area_entered" from="Orb" to="Orb" method="_on_area_entered"]

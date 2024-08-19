@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://k2veitia0cyy"
 path.s3tc="res://.godot/imported/gray.png-675b4835cfa053c4a198b8572d3395cc.s3tc.ctex"
+path.etc2="res://.godot/imported/gray.png-675b4835cfa053c4a198b8572d3395cc.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://objects/wall/materials/textures/gray.png"
-dest_files=["res://.godot/imported/gray.png-675b4835cfa053c4a198b8572d3395cc.s3tc.ctex"]
+dest_files=["res://.godot/imported/gray.png-675b4835cfa053c4a198b8572d3395cc.s3tc.ctex", "res://.godot/imported/gray.png-675b4835cfa053c4a198b8572d3395cc.etc2.ctex"]
 
 [params]
 

@@ -77,11 +77,11 @@ light_energy = 0.5
 distance_fade_enabled = true
 
 [node name="MeshOut" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.014064, -0.356383, -0.350418, 3.06466e-08, 0.350557, -0.356524, 0.499802, 0.0100283, 0.00986046, 0, 0, 0)
+transform = Transform3D(-0.497102, 0.0537293, 0.00169491, 1.3782e-09, 0.0157648, -0.499751, -0.0537561, -0.496855, -0.0156734, 0, 0, 0)
 mesh = SubResource("BoxMesh_yauu3")
 
 [node name="MeshIn" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.00703198, -0.178191, -0.175208, 1.53234e-08, 0.175278, -0.178261, 0.249901, 0.00501413, 0.00493021, 0, 0, 0)
+transform = Transform3D(-0.248551, 0.0268646, 0.00084745, 6.89103e-10, 0.00788239, -0.249875, -0.026878, -0.248427, -0.00783668, 0, 0, 0)
 mesh = SubResource("BoxMesh_fai7o")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]

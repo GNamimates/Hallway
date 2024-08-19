@@ -1,136 +1,134 @@
-[gd_scene load_steps=38 format=3 uid="uid://dim8cuvgdypby"]
+[gd_scene load_steps=36 format=3 uid="uid://dkvys114iocv0"]
 
-[ext_resource type="PackedScene" uid="uid://cns2g0524lvn1" path="res://objects/wall/wall.tscn" id="1_wp04t"]
-[ext_resource type="Material" uid="uid://dut032u47qwpq" path="res://objects/wall/materials/wall_black.tres" id="2_p4l22"]
-[ext_resource type="PackedScene" uid="uid://jkeyedilmoer" path="res://objects/portal/portal.tscn" id="4_1x2vo"]
-[ext_resource type="Texture2D" uid="uid://c8miyac0vgwwj" path="res://objects/wall/materials/textures/concrete_flooring.png" id="4_8f85w"]
-[ext_resource type="Texture2D" uid="uid://rt2tcesn65yu" path="res://objects/wall/materials/textures/concrete_flooring_n.png" id="4_h2kaq"]
-[ext_resource type="Texture2D" uid="uid://k58lemup63ey" path="res://objects/wall/materials/textures/wall_white.png" id="4_nc048"]
-[ext_resource type="Environment" uid="uid://drulnpmvmtpbc" path="res://environment.tres" id="5_djr0o"]
-[ext_resource type="Texture2D" uid="uid://c5ggjra614pbw" path="res://objects/wall/materials/textures/wall_n.png" id="5_orxp5"]
-[ext_resource type="Material" uid="uid://cghdstt0fv4lc" path="res://objects/wall/materials/warning.tres" id="7_55hwg"]
-[ext_resource type="Material" uid="uid://hmrhyehcbhyi" path="res://objects/wall/materials/wood.tres" id="7_nuibc"]
-[ext_resource type="Script" path="res://objects/UI/main_menu.gd" id="8_5osmf"]
-[ext_resource type="Script" path="res://objects/Camera.gd" id="8_22ins"]
-[ext_resource type="PackedScene" uid="uid://7qv0vmax650i" path="res://objects/UI/levelButton/level_button.tscn" id="9_8xuur"]
-[ext_resource type="Script" path="res://objects/UI/levels_grid.gd" id="9_12v2i"]
-[ext_resource type="Script" path="res://objects/UI/level_selection.gd" id="9_bndlk"]
-[ext_resource type="PackedScene" uid="uid://bjw5n4nyles4o" path="res://objects/light/lamp.tscn" id="10_ka18l"]
-[ext_resource type="PackedScene" uid="uid://dgosnbsq0g0h3" path="res://objects/orb/orb.tscn" id="11_u82hs"]
-[ext_resource type="FontFile" uid="uid://ca3w6oo4grxfj" path="res://fonts/BebasNeue-Regular.ttf" id="12_6xhxv"]
-[ext_resource type="PackedScene" uid="uid://btj6yw6exex5d" path="res://objects/UI/settingsButton/settings_button.tscn" id="14_4slsq"]
-[ext_resource type="Texture2D" uid="uid://dbvjnx3d3c8fy" path="res://gmtk-2022b.png" id="14_b1m7q"]
-[ext_resource type="PackedScene" uid="uid://bna05d21njtcl" path="res://levels/concepts.tscn" id="17_oc27v"]
-[ext_resource type="Script" path="res://objects/shake.gd" id="20_m4ptc"]
-[ext_resource type="PackedScene" uid="uid://3jihx4peb82p" path="res://levels/maze.tscn" id="20_y6l4u"]
-[ext_resource type="PackedScene" uid="uid://b2f8oc8vsoyuk" path="res://levels/rotate.tscn" id="21_l85uj"]
-[ext_resource type="PackedScene" uid="uid://cui6cmx4mceqy" path="res://levels/tradeshall.tscn" id="22_bnxsr"]
-[ext_resource type="PackedScene" uid="uid://bnanc1npbvhnl" path="res://levels/table.tscn" id="23_xfkkm"]
+[ext_resource type="PackedScene" uid="uid://cns2g0524lvn1" path="res://objects/wall/wall.tscn" id="1_1itj5"]
+[ext_resource type="Material" uid="uid://dut032u47qwpq" path="res://objects/wall/materials/wall_black.tres" id="2_qvm84"]
+[ext_resource type="Texture2D" uid="uid://c8miyac0vgwwj" path="res://objects/wall/materials/textures/concrete_flooring.png" id="3_p4xih"]
+[ext_resource type="Texture2D" uid="uid://rt2tcesn65yu" path="res://objects/wall/materials/textures/concrete_flooring_n.png" id="4_vkcml"]
+[ext_resource type="Texture2D" uid="uid://k58lemup63ey" path="res://objects/wall/materials/textures/wall_white.png" id="5_24rey"]
+[ext_resource type="Texture2D" uid="uid://c5ggjra614pbw" path="res://objects/wall/materials/textures/wall_n.png" id="6_lsx3s"]
+[ext_resource type="Material" uid="uid://hmrhyehcbhyi" path="res://objects/wall/materials/wood.tres" id="7_qjqjl"]
+[ext_resource type="Material" uid="uid://cghdstt0fv4lc" path="res://objects/wall/materials/warning.tres" id="8_px51h"]
+[ext_resource type="Environment" uid="uid://drulnpmvmtpbc" path="res://environment.tres" id="9_fpatl"]
+[ext_resource type="PackedScene" uid="uid://jkeyedilmoer" path="res://objects/portal/portal.tscn" id="10_qurtv"]
+[ext_resource type="PackedScene" uid="uid://dgosnbsq0g0h3" path="res://objects/orb/orb.tscn" id="11_ewnyr"]
+[ext_resource type="Script" path="res://objects/UI/main_menu.gd" id="12_nd6xe"]
+[ext_resource type="FontFile" uid="uid://ca3w6oo4grxfj" path="res://fonts/BebasNeue-Regular.ttf" id="13_yiwrn"]
+[ext_resource type="PackedScene" uid="uid://btj6yw6exex5d" path="res://objects/UI/settingsButton/settings_button.tscn" id="14_ktakt"]
+[ext_resource type="Script" path="res://objects/UI/level_selection.gd" id="16_6aje7"]
+[ext_resource type="Script" path="res://objects/UI/levels_grid.gd" id="17_xyrye"]
+[ext_resource type="PackedScene" uid="uid://7qv0vmax650i" path="res://objects/UI/levelButton/level_button.tscn" id="18_d7aa7"]
+[ext_resource type="PackedScene" uid="uid://bna05d21njtcl" path="res://levels/concepts.tscn" id="19_dtkyq"]
+[ext_resource type="PackedScene" uid="uid://3jihx4peb82p" path="res://levels/maze.tscn" id="20_ey08v"]
+[ext_resource type="PackedScene" uid="uid://b2f8oc8vsoyuk" path="res://levels/rotate.tscn" id="21_poy3n"]
+[ext_resource type="PackedScene" uid="uid://cui6cmx4mceqy" path="res://levels/tradeshall.tscn" id="22_5wyx5"]
+[ext_resource type="Script" path="res://objects/shake.gd" id="23_85ebn"]
+[ext_resource type="Script" path="res://objects/Camera.gd" id="24_6jpug"]
+[ext_resource type="PackedScene" uid="uid://bjw5n4nyles4o" path="res://objects/light/lamp.tscn" id="25_vanp8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_na0ub"]
-albedo_texture = ExtResource("4_8f85w")
+albedo_texture = ExtResource("3_p4xih")
 normal_enabled = true
 normal_scale = 0.32
-normal_texture = ExtResource("4_h2kaq")
+normal_texture = ExtResource("4_vkcml")
 uv1_offset = Vector3(-4.5, -0.5, -4.5)
 uv1_triplanar = true
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k2jr0"]
-albedo_texture = ExtResource("4_nc048")
+albedo_texture = ExtResource("5_24rey")
 metallic = 0.61
 roughness = 0.64
 normal_enabled = true
 normal_scale = -0.45
-normal_texture = ExtResource("5_orxp5")
+normal_texture = ExtResource("6_lsx3s")
 uv1_offset = Vector3(-0.5, -0.5, -2)
 uv1_triplanar = true
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2wfox"]
-albedo_texture = ExtResource("4_nc048")
+albedo_texture = ExtResource("5_24rey")
 metallic = 0.61
 roughness = 0.64
 normal_enabled = true
 normal_scale = -0.45
-normal_texture = ExtResource("5_orxp5")
+normal_texture = ExtResource("6_lsx3s")
 uv1_offset = Vector3(-0.5, -0.5, -2)
 uv1_triplanar = true
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xibnb"]
-albedo_texture = ExtResource("4_nc048")
+albedo_texture = ExtResource("5_24rey")
 metallic = 0.61
 roughness = 0.64
 normal_enabled = true
 normal_scale = -0.45
-normal_texture = ExtResource("5_orxp5")
+normal_texture = ExtResource("6_lsx3s")
 uv1_offset = Vector3(-0.5, -0.5, -2)
 uv1_triplanar = true
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gkj28"]
-albedo_texture = ExtResource("4_nc048")
+albedo_texture = ExtResource("5_24rey")
 metallic = 0.61
 roughness = 0.64
 normal_enabled = true
 normal_scale = -0.45
-normal_texture = ExtResource("5_orxp5")
+normal_texture = ExtResource("6_lsx3s")
 uv1_offset = Vector3(-0.5, -0.5, -2)
 uv1_triplanar = true
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gahdk"]
-albedo_texture = ExtResource("4_nc048")
+albedo_texture = ExtResource("5_24rey")
 metallic = 0.61
 roughness = 0.64
 normal_enabled = true
 normal_scale = -0.45
-normal_texture = ExtResource("5_orxp5")
+normal_texture = ExtResource("6_lsx3s")
 uv1_offset = Vector3(-0.5, -0.5, -2)
 uv1_triplanar = true
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d2x1d"]
-albedo_texture = ExtResource("4_nc048")
+albedo_texture = ExtResource("5_24rey")
 metallic = 0.61
 roughness = 0.64
 normal_enabled = true
 normal_scale = -0.45
-normal_texture = ExtResource("5_orxp5")
+normal_texture = ExtResource("6_lsx3s")
 uv1_offset = Vector3(-0.5, -0.5, -2)
 uv1_triplanar = true
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jo277"]
-albedo_texture = ExtResource("4_nc048")
+albedo_texture = ExtResource("5_24rey")
 metallic = 0.61
 roughness = 0.64
 normal_enabled = true
 normal_scale = -0.45
-normal_texture = ExtResource("5_orxp5")
+normal_texture = ExtResource("6_lsx3s")
 uv1_offset = Vector3(-0.5, -0.5, -2)
 uv1_triplanar = true
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n84ek"]
-albedo_texture = ExtResource("4_nc048")
+albedo_texture = ExtResource("5_24rey")
 metallic = 0.61
 roughness = 0.64
 normal_enabled = true
 normal_scale = -0.45
-normal_texture = ExtResource("5_orxp5")
+normal_texture = ExtResource("6_lsx3s")
 uv1_offset = Vector3(-0.5, -0.5, -2)
 uv1_triplanar = true
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dlvei"]
-albedo_texture = ExtResource("4_nc048")
+albedo_texture = ExtResource("5_24rey")
 metallic = 0.61
 roughness = 0.64
 normal_enabled = true
 normal_scale = -0.45
-normal_texture = ExtResource("5_orxp5")
+normal_texture = ExtResource("6_lsx3s")
 uv1_offset = Vector3(-0.5, -0.5, -2)
 uv1_triplanar = true
 texture_filter = 2
@@ -139,148 +137,148 @@ texture_filter = 2
 
 [node name="Main" type="Node"]
 
-[node name="Wall" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall" parent="." instance=ExtResource("1_1itj5")]
 dimensions = Vector3(9, 1, 9)
-material = ExtResource("2_p4l22")
+material = ExtResource("2_qvm84")
 
-[node name="Wall22" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall22" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 dimensions = Vector3(9, 1, 9)
 material = SubResource("StandardMaterial3D_na0ub")
 
-[node name="Wall2" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall2" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -2.5)
 dimensions = Vector3(1, 1, 4)
 material = SubResource("StandardMaterial3D_k2jr0")
 
-[node name="Wall24" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall24" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -3)
 dimensions = Vector3(3, 1, 3)
 material = SubResource("StandardMaterial3D_k2jr0")
 
-[node name="Wall25" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall25" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.53083, -2)
 dimensions = Vector3(1.8125, 0.0625, 0.4375)
-material = ExtResource("7_nuibc")
+material = ExtResource("7_qjqjl")
 
-[node name="Wall3" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall3" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3.5)
 dimensions = Vector3(1, 1, 4)
 material = SubResource("StandardMaterial3D_2wfox")
 
-[node name="Wall9" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall9" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 1, 5)
 dimensions = Vector3(1, 1, 4)
 material = SubResource("StandardMaterial3D_xibnb")
 
-[node name="Wall4" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall4" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 3.5)
 dimensions = Vector3(1, 3, 4)
-material = ExtResource("2_p4l22")
+material = ExtResource("2_qvm84")
 
-[node name="Wall12" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall12" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 2.5)
 dimensions = Vector3(1, 1, 4)
 material = SubResource("StandardMaterial3D_gkj28")
 
-[node name="Wall13" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall13" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 2.5)
 dimensions = Vector3(1, 3, 4)
-material = ExtResource("2_p4l22")
+material = ExtResource("2_qvm84")
 
-[node name="Wall14" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall14" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -1.5)
 dimensions = Vector3(1, 1, 4)
 material = SubResource("StandardMaterial3D_gahdk")
 
-[node name="Wall15" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall15" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, -1.5)
 dimensions = Vector3(1, 3, 4)
-material = ExtResource("2_p4l22")
+material = ExtResource("2_qvm84")
 
-[node name="Wall27" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall27" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.4, -3.1)
 dimensions = Vector3(1, 10, 1)
-material = ExtResource("7_55hwg")
+material = ExtResource("8_px51h")
 
-[node name="Wall8" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall8" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 3, 5)
 dimensions = Vector3(1, 3, 4)
-material = ExtResource("2_p4l22")
+material = ExtResource("2_qvm84")
 
-[node name="Wall16" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall16" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 1, -5)
 dimensions = Vector3(1, 1, 4)
 material = SubResource("StandardMaterial3D_d2x1d")
 
-[node name="Wall17" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall17" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 3, -5)
 dimensions = Vector3(1, 3, 4)
-material = ExtResource("2_p4l22")
+material = ExtResource("2_qvm84")
 
-[node name="Wall18" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall18" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 1, -5)
 dimensions = Vector3(1, 1, 4)
 material = SubResource("StandardMaterial3D_jo277")
 
-[node name="Wall19" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall19" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 3, -5)
 dimensions = Vector3(1, 3, 4)
-material = ExtResource("2_p4l22")
+material = ExtResource("2_qvm84")
 
-[node name="Wall20" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall20" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -4.5, 1, -4)
 dimensions = Vector3(1, 1, 4)
 material = SubResource("StandardMaterial3D_n84ek")
 
-[node name="Wall21" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall21" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -4.5, 3, -4)
 dimensions = Vector3(1, 3, 4)
-material = ExtResource("2_p4l22")
+material = ExtResource("2_qvm84")
 
-[node name="Wall10" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall10" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.5, 1, 5)
 dimensions = Vector3(1, 1, 4)
 material = SubResource("StandardMaterial3D_dlvei")
 
-[node name="Wall11" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall11" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.5, 3, 5)
 dimensions = Vector3(1, 3, 4)
-material = ExtResource("2_p4l22")
+material = ExtResource("2_qvm84")
 
-[node name="Wall5" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall5" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, -1)
 dimensions = Vector3(1, 3, 1)
-material = ExtResource("2_p4l22")
+material = ExtResource("2_qvm84")
 
-[node name="Wall23" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall23" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 1)
 dimensions = Vector3(1, 1, 3)
-material = ExtResource("2_p4l22")
+material = ExtResource("2_qvm84")
 
-[node name="Wall6" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall6" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, -3.5)
 dimensions = Vector3(1, 3, 2)
-material = ExtResource("2_p4l22")
+material = ExtResource("2_qvm84")
 
-[node name="Wall7" parent="." instance=ExtResource("1_wp04t")]
+[node name="Wall7" parent="." instance=ExtResource("1_1itj5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, -3)
 dimensions = Vector3(1, 3, 3)
-material = ExtResource("2_p4l22")
+material = ExtResource("2_qvm84")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("5_djr0o")
+environment = ExtResource("9_fpatl")
 camera_attributes = SubResource("CameraAttributesPractical_j76mb")
 
-[node name="Portal" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("4_1x2vo")]
+[node name="Portal" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("10_qurtv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 2, 0.5)
 pair = NodePath("../Portal2")
 
-[node name="Portal2" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("4_1x2vo")]
+[node name="Portal2" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("10_qurtv")]
 transform = Transform3D(-0.5, 4.37114e-08, 7.54979e-08, 4.37114e-08, 0.5, -1.67932e-14, -7.54979e-08, -1.0193e-14, -0.5, 4, 2.23273, -2.27287)
 pair = NodePath("../Portal")
 
-[node name="Orb" parent="." instance=ExtResource("11_u82hs")]
+[node name="Orb" parent="." instance=ExtResource("11_ewnyr")]
 transform = Transform3D(0.43, 0, 0, 0, 0.43, 0, 0, 0, 0.43, 3.98926, 1.90899, -2.13625)
 
 [node name="CanvasLayer" type="Control" parent="."]
@@ -327,13 +325,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("8_5osmf")
+script = ExtResource("12_nd6xe")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Main"]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 460.0
+offset_right = 592.0
 grow_vertical = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
@@ -348,59 +346,19 @@ alignment = 1
 [node name="Title" type="Label" parent="CanvasLayer/Main/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_6xhxv")
-theme_override_font_sizes/font_size = 151
+theme_override_fonts/font = ExtResource("13_yiwrn")
+theme_override_font_sizes/font_size = 211
 text = "Hallway"
 horizontal_alignment = 1
 
 [node name="Levelsbutton" type="Button" parent="CanvasLayer/Main/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Play"
 
-[node name="SettingsButton" parent="CanvasLayer/Main/MarginContainer/VBoxContainer" instance=ExtResource("14_4slsq")]
+[node name="SettingsButton" parent="CanvasLayer/Main/MarginContainer/VBoxContainer" instance=ExtResource("14_ktakt")]
+visible = false
 layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/Main"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -533.0
-offset_top = -23.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 0.164706)
-text = "2024 GNamimates (Green Neon Amimates). All Rights Reserved."
-horizontal_alignment = 2
-
-[node name="Label2" type="Label" parent="CanvasLayer/Main"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -252.0
-offset_top = 27.0
-offset_right = -78.0
-offset_bottom = 50.0
-grow_horizontal = 0
-theme_override_colors/font_color = Color(1, 1, 1, 0.341176)
-text = "GMTK Game Jam 2024 "
-horizontal_alignment = 2
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Main"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -78.0
-offset_bottom = 74.0
-grow_horizontal = 0
-tooltip_text = "This game is a submission to the GMTK Game Jam 2024 \"Built to Scale\""
-texture = ExtResource("14_b1m7q")
-expand_mode = 1
-stretch_mode = 4
 
 [node name="LevelSelection" type="Control" parent="CanvasLayer"]
 visible = false
@@ -410,7 +368,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("9_bndlk")
+script = ExtResource("16_6aje7")
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/LevelSelection"]
 layout_mode = 1
@@ -426,7 +384,7 @@ layout_mode = 2
 [node name="LevelsTitle" type="Label" parent="CanvasLayer/LevelSelection/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_6xhxv")
+theme_override_fonts/font = ExtResource("13_yiwrn")
 theme_override_font_sizes/font_size = 151
 text = "Levels"
 horizontal_alignment = 1
@@ -452,31 +410,26 @@ text = "X"
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/LevelSelection/CenterContainer/VBoxContainer"]
 layout_mode = 2
 columns = 5
-script = ExtResource("9_12v2i")
+script = ExtResource("17_xyrye")
 
-[node name="Concepts" parent="CanvasLayer/LevelSelection/CenterContainer/VBoxContainer/GridContainer" instance=ExtResource("9_8xuur")]
+[node name="Concepts" parent="CanvasLayer/LevelSelection/CenterContainer/VBoxContainer/GridContainer" instance=ExtResource("18_d7aa7")]
 layout_mode = 2
-level = ExtResource("17_oc27v")
+level = ExtResource("19_dtkyq")
 
-[node name="Maze" parent="CanvasLayer/LevelSelection/CenterContainer/VBoxContainer/GridContainer" instance=ExtResource("9_8xuur")]
+[node name="Maze" parent="CanvasLayer/LevelSelection/CenterContainer/VBoxContainer/GridContainer" instance=ExtResource("18_d7aa7")]
 layout_mode = 2
 text = "2"
-level = ExtResource("20_y6l4u")
+level = ExtResource("20_ey08v")
 
-[node name="Rotate" parent="CanvasLayer/LevelSelection/CenterContainer/VBoxContainer/GridContainer" instance=ExtResource("9_8xuur")]
+[node name="Rotate" parent="CanvasLayer/LevelSelection/CenterContainer/VBoxContainer/GridContainer" instance=ExtResource("18_d7aa7")]
 layout_mode = 2
 text = "3"
-level = ExtResource("21_l85uj")
+level = ExtResource("21_poy3n")
 
-[node name="Trades Hall" parent="CanvasLayer/LevelSelection/CenterContainer/VBoxContainer/GridContainer" instance=ExtResource("9_8xuur")]
+[node name="Trades Hall" parent="CanvasLayer/LevelSelection/CenterContainer/VBoxContainer/GridContainer" instance=ExtResource("18_d7aa7")]
 layout_mode = 2
 text = "4"
-level = ExtResource("22_bnxsr")
-
-[node name="Table" parent="CanvasLayer/LevelSelection/CenterContainer/VBoxContainer/GridContainer" instance=ExtResource("9_8xuur")]
-layout_mode = 2
-text = "5"
-level = ExtResource("23_xfkkm")
+level = ExtResource("22_5wyx5")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/LevelSelection/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 20)
@@ -489,14 +442,14 @@ text = "Play"
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.592131, 2.06586, 0.282401)
-script = ExtResource("20_m4ptc")
+script = ExtResource("23_85ebn")
 
 [node name="Camera" type="Camera3D" parent="Node3D"]
 transform = Transform3D(0.380764, 0, -0.924672, 0, 1, 0, 0.924672, 0, 0.380764, 0, 0, 0)
 fov = 45.0
-script = ExtResource("8_22ins")
+script = ExtResource("24_6jpug")
 
-[node name="Lamp" parent="." instance=ExtResource("10_ka18l")]
+[node name="Lamp" parent="." instance=ExtResource("25_vanp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4.46986, 0)
 
 [node name="ColorRect" type="ColorRect" parent="."]
