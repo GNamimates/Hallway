@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://ddyex2j3enl24"]
+
+[ext_resource type="Script" path="res://objects/button/button.gd" id="1_3l7e1"]
+[ext_resource type="PackedScene" uid="uid://cns2g0524lvn1" path="res://objects/wall/wall.tscn" id="2_3hufa"]
+[ext_resource type="Material" uid="uid://cghdstt0fv4lc" path="res://objects/wall/materials/warning.tres" id="3_h28lc"]
+[ext_resource type="Material" uid="uid://cmbi57w5jokwe" path="res://objects/wall/materials/red.tres" id="4_7g2kw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ris0d"]
+size = Vector3(1, 0.798828, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_au5tv"]
+size = Vector3(0.7, 0.194092, 0.7)
+
+[node name="Button" type="Node3D"]
+script = ExtResource("1_3l7e1")
+
+[node name="Wall" parent="." instance=ExtResource("2_3hufa")]
+dimensions = Vector3(0.75, 0.25, 0.75)
+material = ExtResource("3_h28lc")
+can_collide = false
+
+[node name="Wall2" parent="." instance=ExtResource("2_3hufa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+dimensions = Vector3(0.625, 0.25, 0.625)
+material = ExtResource("4_7g2kw")
+can_collide = false
+
+[node name="PlayerDetector" type="Area3D" parent="."]
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.600586, 0)
+shape = SubResource("BoxShape3D_ris0d")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.402954, 0)
+shape = SubResource("BoxShape3D_au5tv")
+
+[connection signal="area_entered" from="PlayerDetector" to="." method="_on_player_detector_area_entered"]
+[connection signal="area_exited" from="PlayerDetector" to="." method="_on_player_detector_area_exited"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

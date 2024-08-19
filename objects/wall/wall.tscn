@@ -13,7 +13,7 @@ size = Vector3(1, 1, 9)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4lgx4"]
 albedo_texture = ExtResource("2_xx1kf")
-uv1_offset = Vector3(-6.5, -0.1875, -0.09375)
+uv1_offset = Vector3(-1.5, -0.5, -0.5)
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_mvdxg"]

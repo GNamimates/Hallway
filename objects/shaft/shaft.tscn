@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dufq5llq6rep"]
+
+[ext_resource type="AudioStream" uid="uid://b0qclvy4c3mf1" path="res://audio/motor_start.ogg" id="1_d5kl5"]
+[ext_resource type="Script" path="res://objects/shaft/shaft.gd" id="1_h51fx"]
+[ext_resource type="AudioStream" uid="uid://x2swbttr8hpo" path="res://audio/motor.ogg" id="2_hn1my"]
+[ext_resource type="AudioStream" uid="uid://dyf7wyrh8dndi" path="res://audio/metal.ogg" id="3_mxh7l"]
+
+[node name="Shaft" type="Node3D"]
+script = ExtResource("1_h51fx")
+enabled = true
+duration = 4.0
+time = 4.0
+
+[node name="Start" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_d5kl5")
+
+[node name="Mid" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_hn1my")
+pitch_scale = 0.890899
+
+[node name="End" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_mxh7l")
