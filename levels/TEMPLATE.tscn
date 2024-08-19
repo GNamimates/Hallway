@@ -174,7 +174,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 18.5, 
 pair = NodePath("../Portal2")
 
 [node name="Portal2" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("6_1idry")]
-transform = Transform3D(-1.22392e-07, 2.8, 0, -2.8, -1.22392e-07, 0, 0, 0, 2.8, 9.07472, 5.35, 3.175)
+transform = Transform3D(-4.36896e-08, 0.999502, 0, -0.999502, -4.36896e-08, 0, 0, 0, 0.999502, 9.70489, 5.35, 2.49981)
 pair = NodePath("../Portal")
 
 [node name="Orb" parent="." instance=ExtResource("7_g2kiy")]
@@ -216,17 +216,17 @@ dimensions = Vector3(0.375, 3, 0.1875)
 material = ExtResource("12_h2nmv")
 
 [node name="Wall52" parent="." instance=ExtResource("1_poakf")]
-transform = Transform3D(5.34992e-15, 2.8, 1.22392e-07, 1.22392e-07, -1.22392e-07, 2.8, 2.8, 0, -1.22392e-07, 9.07472, 2.83, 1.775)
+transform = Transform3D(-4.36896e-08, 0.999502, 4.36896e-08, 0, -4.36896e-08, 0.999502, 0.999502, 4.36896e-08, 1.90973e-15, 9.70489, 4.45045, 2.00006)
 dimensions = Vector3(0.375, 3, 0.1875)
 material = ExtResource("12_h2nmv")
 
 [node name="Wall53" parent="." instance=ExtResource("1_poakf")]
-transform = Transform3D(5.34992e-15, 2.8, 1.22392e-07, 1.22392e-07, -1.22392e-07, 2.8, 2.8, 0, -1.22392e-07, 12.9947, 5.35, 1.775)
+transform = Transform3D(-4.36896e-08, 0.999502, 4.36896e-08, 0, -4.36896e-08, 0.999502, 0.999502, 4.36896e-08, 1.90973e-15, 11.1042, 5.35, 2.00006)
 dimensions = Vector3(0.375, 0.1875, 2)
 material = ExtResource("12_h2nmv")
 
 [node name="Wall55" parent="." instance=ExtResource("1_poakf")]
-transform = Transform3D(5.34992e-15, 2.8, 1.22392e-07, 1.22392e-07, -1.22392e-07, 2.8, 2.8, 0, -1.22392e-07, 9.07472, 7.87, 1.775)
+transform = Transform3D(-4.36896e-08, 0.999502, 4.36896e-08, 0, -4.36896e-08, 0.999502, 0.999502, 4.36896e-08, 1.90973e-15, 9.70489, 6.24955, 2.00006)
 dimensions = Vector3(0.375, 3, 0.1875)
 material = ExtResource("12_h2nmv")
 

@@ -38,6 +38,7 @@ func _physics_process(delta: float) -> void:
 	
 	var leg_height : float
 	var plane : Plane
+	feet.force_raycast_update()
 	if feet.is_colliding():
 		leg_height += (to_local(feet.global_position).y - to_local(feet.get_collision_point()).y - .5)
 	else:
@@ -47,7 +48,6 @@ func _physics_process(delta: float) -> void:
 		walk_speed = SPRINT_SPEED
 	else:
 		walk_speed = WALK_SPEED
-	
 	travel_speed = velocity.length()
 	if leg_height < 1.2:
 		plane = Plane(
