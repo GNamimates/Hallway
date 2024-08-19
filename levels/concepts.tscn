@@ -52,7 +52,7 @@ dimensions = Vector3(10, 1, 10)
 material = SubResource("StandardMaterial3D_hqh4l")
 
 [node name="Wall40" parent="." instance=ExtResource("1_jev1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 7.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 8.5, 0)
 dimensions = Vector3(1, 4, 10)
 material = SubResource("StandardMaterial3D_hqh4l")
 
@@ -191,8 +191,8 @@ dimensions = Vector3(1, 8, 12)
 material = ExtResource("7_kbgwk")
 
 [node name="Wall28" parent="." instance=ExtResource("1_jev1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 4.5, -4.5)
-dimensions = Vector3(2, 2, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, -4.5)
+dimensions = Vector3(2, 3, 1)
 material = ExtResource("7_kbgwk")
 
 [node name="Wall21" parent="." instance=ExtResource("1_jev1x")]
@@ -257,7 +257,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 4.5, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.1, 1, 1.5)
 
 [node name="Lamp" parent="." instance=ExtResource("10_5aq8w")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 4.46986, 0.1)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 5.46986, 0.1)
 
 [node name="Lamp3" parent="." instance=ExtResource("10_5aq8w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 5.46986, 0.6)

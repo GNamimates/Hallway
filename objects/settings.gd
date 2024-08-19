@@ -1,8 +1,9 @@
+@tool
 extends Node
 
 var settings = {
 	"half_portal_resolution" : false,
-	"sensitivity" : 50,
+	"sensitivity" : 50.0,
 	"show_fps": false,
 	"show_timer": false,
 	"levels_unlocked" : 1,
@@ -29,7 +30,7 @@ func _enter_tree() -> void:
 
 func set_setting(key,value) -> void:
 	saveTimer.start()
-	if typeof(value) == typeof(settings[key]) and settings[key] != value:
+	if settings[key] != value:
 		settings[key] = value
 		emit_signal("settings_changed",key,value)
 

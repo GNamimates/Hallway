@@ -130,6 +130,7 @@ tooltip_text = "Shows the frames per second of the game"
 text = "Show FPS"
 
 [node name="TimerToggle" type="CheckButton" parent="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 tooltip_text = "Shows a timer that starts when the player moves, and stops when the player collects all the orbs."
@@ -139,16 +140,16 @@ text = "Show Level Timer"
 layout_mode = 2
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 228.0
-offset_bottom = 95.0
+offset_left = -225.0
+offset_top = 184.0
+offset_right = -189.0
+offset_bottom = 215.0
 text = "X"
 flat = true
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="toggled" from="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
-[connection signal="drag_ended" from="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_drag_ended"]
+[connection signal="value_changed" from="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="toggled" from="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FPSToggle" to="." method="_on_fps_toggle_toggled"]
 [connection signal="toggled" from="Node/Settings/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TimerToggle" to="." method="_on_timer_toggle_toggled"]
 [connection signal="pressed" from="Node/Settings/CloseButton" to="." method="_on_close_button_pressed"]

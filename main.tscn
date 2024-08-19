@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dim8cuvgdypby"]
+[gd_scene load_steps=36 format=3 uid="uid://dim8cuvgdypby"]
 
 [ext_resource type="PackedScene" uid="uid://cns2g0524lvn1" path="res://objects/wall/wall.tscn" id="1_wp04t"]
 [ext_resource type="Material" uid="uid://dut032u47qwpq" path="res://objects/wall/materials/wall_black.tres" id="2_p4l22"]
@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://dbvjnx3d3c8fy" path="res://gmtk-2022b.png" id="14_b1m7q"]
 [ext_resource type="PackedScene" uid="uid://bna05d21njtcl" path="res://levels/concepts.tscn" id="17_oc27v"]
 [ext_resource type="Script" path="res://objects/shake.gd" id="20_m4ptc"]
+[ext_resource type="PackedScene" uid="uid://3jihx4peb82p" path="res://levels/maze.tscn" id="20_y6l4u"]
+[ext_resource type="PackedScene" uid="uid://cpmf1vvgmv244" path="res://levels/TEMPLATE.tscn" id="21_efdfh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_na0ub"]
 albedo_texture = ExtResource("4_8f85w")
@@ -389,7 +391,6 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="LevelSelection" type="Control" parent="CanvasLayer"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -423,7 +424,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 24
-text = "Tutorial"
+text = "Pick a Level"
 horizontal_alignment = 1
 
 [node name="ReturnButton" type="Button" parent="CanvasLayer/LevelSelection/CenterContainer/VBoxContainer/LabelLevelTitle"]
@@ -442,8 +443,17 @@ script = ExtResource("9_12v2i")
 
 [node name="Concepts" parent="CanvasLayer/LevelSelection/CenterContainer/VBoxContainer/GridContainer" instance=ExtResource("9_8xuur")]
 layout_mode = 2
-text = "1"
 level = ExtResource("17_oc27v")
+
+[node name="Maze" parent="CanvasLayer/LevelSelection/CenterContainer/VBoxContainer/GridContainer" instance=ExtResource("9_8xuur")]
+layout_mode = 2
+text = "2"
+level = ExtResource("20_y6l4u")
+
+[node name="Sideways portal problem" parent="CanvasLayer/LevelSelection/CenterContainer/VBoxContainer/GridContainer" instance=ExtResource("9_8xuur")]
+layout_mode = 2
+text = "3"
+level = ExtResource("21_efdfh")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/LevelSelection/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 20)

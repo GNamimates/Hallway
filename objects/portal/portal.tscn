@@ -4,13 +4,13 @@
 [ext_resource type="Shader" path="res://shaders/portal.gdshader" id="2_dxx5k"]
 [ext_resource type="ArrayMesh" uid="uid://dw0pl88txpf6u" path="res://objects/portal/portal.obj" id="3_micnx"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_13nwq"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_hwenu"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fjcb6"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6xu6r"]
 render_priority = 0
 shader = ExtResource("2_dxx5k")
-shader_parameter/portal = SubResource("ViewportTexture_13nwq")
+shader_parameter/portal = SubResource("ViewportTexture_hwenu")
 
 [sub_resource type="Gradient" id="Gradient_7oij5"]
 offsets = PackedFloat32Array(0.0442478, 0.619469, 1)
@@ -72,16 +72,15 @@ can_teleport = true
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.95, 0, 0, 0, 1.45, 0, 0, 0, 0.45, 0, 0, 0)
 layers = 2
-material_override = SubResource("ShaderMaterial_fjcb6")
+material_override = SubResource("ShaderMaterial_6xu6r")
 mesh = ExtResource("3_micnx")
 
 [node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(595, 306)
+size = Vector2i(1090, 612)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport"]
 transform = Transform3D(0.879666, -0.116247, 0.461167, 0, 0.969668, 0.244425, -0.475592, -0.215013, 0.852984, 1.5812, 1.24386, 2.6211)
-visible = false
 cull_mask = 1048573
 environment = SubResource("Environment_72qv7")
 fov = 50.01

@@ -15,7 +15,7 @@ gi_mode = 0
 mesh = SubResource("BoxMesh_lcre1")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.14945, 0)
 light_color = Color(1, 0.958, 0.91, 1)
 light_energy = 0.5
 shadow_enabled = true

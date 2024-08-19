@@ -3,11 +3,13 @@ extends StaticBody3D
 
 @export var dimensions : Vector3 = Vector3(1.0, 1.0, 1.0) : set = set_dimensions
 @export var material : Material : set = set_material
-
+@export var can_collide : bool = true
 
 func _ready():
 	$MeshInstance3D.mesh = BoxMesh.new()
 	$CollisionShape3D.shape = BoxShape3D.new()
+	if !can_collide:
+		$CollisionShape3D.disabled = true
 
 
 func _snap(value):

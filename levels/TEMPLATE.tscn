@@ -97,7 +97,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.5
 
 [node name="Wall8" parent="." instance=ExtResource("1_poakf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, 0)
-dimensions = Vector3(8, 1, 8)
+dimensions = Vector3(6, 1, 6)
 material = SubResource("StandardMaterial3D_1aeja")
 
 [node name="Wall2" parent="." instance=ExtResource("1_poakf")]
@@ -131,8 +131,8 @@ dimensions = Vector3(1, 4, 6)
 material = ExtResource("7_hlen5")
 
 [node name="Wall14" parent="." instance=ExtResource("1_poakf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -9)
-dimensions = Vector3(64, 1, 64)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 1)
+dimensions = Vector3(32, 1, 16)
 material = SubResource("StandardMaterial3D_cuhsy")
 
 [node name="Wall9" parent="." instance=ExtResource("1_poakf")]
@@ -143,6 +143,16 @@ material = SubResource("StandardMaterial3D_bgam5")
 [node name="Wall10" parent="." instance=ExtResource("1_poakf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 3.5, 3)
 dimensions = Vector3(1, 4, 4)
+material = ExtResource("7_hlen5")
+
+[node name="Wall30" parent="." instance=ExtResource("1_poakf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 6.5, 0)
+dimensions = Vector3(1, 2, 10)
+material = ExtResource("7_hlen5")
+
+[node name="Wall54" parent="." instance=ExtResource("1_poakf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 5, 0)
+dimensions = Vector3(1, 1, 2)
 material = ExtResource("7_hlen5")
 
 [node name="Wall11" parent="." instance=ExtResource("1_poakf")]
@@ -160,15 +170,15 @@ environment = ExtResource("8_jbmps")
 camera_attributes = SubResource("CameraAttributesPractical_j76mb")
 
 [node name="Portal" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("6_1idry")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.5, 2, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 18.5, 2, 0)
 pair = NodePath("../Portal2")
 
 [node name="Portal2" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("6_1idry")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 8.5, 2, -3.57628e-07)
+transform = Transform3D(-1.22392e-07, 2.8, 0, -2.8, -1.22392e-07, 0, 0, 0, 2.8, 9.07472, 5.35, 3.175)
 pair = NodePath("../Portal")
 
 [node name="Orb" parent="." instance=ExtResource("7_g2kiy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.37155, 1.5, -3.60343)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 15.687, 1.075, -3.68134)
 
 [node name="Lamp" parent="." instance=ExtResource("14_iswb7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.46986, 0)
@@ -190,5 +200,41 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 2.5, 0.9)
 dimensions = Vector3(0.375, 4, 0.1875)
 material = ExtResource("12_h2nmv")
 
+[node name="Wall49" parent="." instance=ExtResource("1_poakf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 2, -0.9)
+dimensions = Vector3(0.375, 3, 0.1875)
+material = ExtResource("12_h2nmv")
+
+[node name="Wall50" parent="." instance=ExtResource("1_poakf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 3.4, 5.96046e-08)
+dimensions = Vector3(0.375, 0.1875, 2)
+material = ExtResource("12_h2nmv")
+
+[node name="Wall51" parent="." instance=ExtResource("1_poakf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 2, 0.9)
+dimensions = Vector3(0.375, 3, 0.1875)
+material = ExtResource("12_h2nmv")
+
+[node name="Wall52" parent="." instance=ExtResource("1_poakf")]
+transform = Transform3D(5.34992e-15, 2.8, 1.22392e-07, 1.22392e-07, -1.22392e-07, 2.8, 2.8, 0, -1.22392e-07, 9.07472, 2.83, 1.775)
+dimensions = Vector3(0.375, 3, 0.1875)
+material = ExtResource("12_h2nmv")
+
+[node name="Wall53" parent="." instance=ExtResource("1_poakf")]
+transform = Transform3D(5.34992e-15, 2.8, 1.22392e-07, 1.22392e-07, -1.22392e-07, 2.8, 2.8, 0, -1.22392e-07, 12.9947, 5.35, 1.775)
+dimensions = Vector3(0.375, 0.1875, 2)
+material = ExtResource("12_h2nmv")
+
+[node name="Wall55" parent="." instance=ExtResource("1_poakf")]
+transform = Transform3D(5.34992e-15, 2.8, 1.22392e-07, 1.22392e-07, -1.22392e-07, 2.8, 2.8, 0, -1.22392e-07, 9.07472, 7.87, 1.775)
+dimensions = Vector3(0.375, 3, 0.1875)
+material = ExtResource("12_h2nmv")
+
 [node name="Lamp5" parent="." instance=ExtResource("14_iswb7")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.5, 4.26986, 0.1)
+
+[node name="Lamp6" parent="." instance=ExtResource("14_iswb7")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 6.76986, 0.1)
+
+[node name="Lamp7" parent="." instance=ExtResource("14_iswb7")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 6.76986, 0.1)

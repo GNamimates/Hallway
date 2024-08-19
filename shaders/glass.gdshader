@@ -1,6 +1,6 @@
 shader_type spatial;
 
-uniform sampler2D SCREEN : hint_screen_texture;
+uniform sampler2D SCREEN : hint_screen_texture,repeat_disable;
 uniform float refraction : hint_range(0.0, 0.5, 0.001);
 uniform float chromatic_aberration : hint_range(0.0, 0.5, 0.001);
 
@@ -16,12 +16,13 @@ void vertex() {
 
 void fragment() {
 	float r = -refraction;
-	vec3 clr = vec3(
-		pow(texture(SCREEN,SCREEN_UV+NORMAL.xy*r).r,1.2),
-		pow(texture(SCREEN,SCREEN_UV+NORMAL.xy*r*(2.0*chromatic_aberration + 1.0)).g,1.2),
-		pow(texture(SCREEN,SCREEN_UV+NORMAL.xy*r*(3.0*chromatic_aberration + 1.0)).b,1.2)
-	);
 	float f = fresnel(10.0,NORMAL,VIEW);
+	vec3 n = NORMAL*(1.0-fresnel(1.0,NORMAL,VIEW));
+	vec3 clr = vec3(
+		texture(SCREEN,SCREEN_UV+n.xy*r).r,
+		texture(SCREEN,SCREEN_UV+n.xy*r*(2.0*chromatic_aberration + 1.0)).g,
+		texture(SCREEN,SCREEN_UV+n.xy*r*(3.0*chromatic_aberration + 1.0)).b
+	);
 	ALBEDO = mix(clr,vec3(1),f);
 }
 

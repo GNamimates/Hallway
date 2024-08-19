@@ -60,8 +60,7 @@ func _physics_process(delta: float) -> void:
 		if input_dir.length_squared() > 0.1:
 			input_dir = input_dir.normalized()
 		velocity *= 0.8
-		velocity += $Neck.global_basis.x * input_dir.x * walk_speed
-		velocity += $Neck.global_basis.z * input_dir.y * walk_speed
+		velocity += $Neck.global_basis * Vector3(input_dir.x,0,input_dir.y) * walk_speed
 		distance_traveled += travel_speed
 		
 		if !is_grounded:

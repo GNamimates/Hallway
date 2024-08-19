@@ -55,9 +55,9 @@ func _transform_changed() -> void:
 			$SubViewport.render_target_update_mode = SubViewport.UPDATE_DISABLED
 		
 		# Camera
-		var transform = global_transform
-		transform.basis = transform.basis.rotated(transform.basis.y.normalized(),PI)
-		var local2portal = transform.affine_inverse() * cam.global_transform
+		var self_global_transform = global_transform
+		self_global_transform.basis = self_global_transform.basis.rotated(self_global_transform.basis.y.normalized(),PI)
+		var local2portal = self_global_transform.affine_inverse() * cam.global_transform
 		
 		portal_camera.global_transform = pair.global_transform * local2portal
 		portal_camera.fov = cam.fov
@@ -75,11 +75,10 @@ func _transform_changed() -> void:
 			last_camera_sign = camera_sign
 			if can_teleport and (not cooldown) and player_inside:
 				cooldown = true
-				player.global_transform = pair.global_transform * transform.affine_inverse() * player.global_transform
 				
-				var b = (pair.global_transform * transform.affine_inverse())
-				b.origin = Vector3.ZERO
-				player.velocity = b * player.velocity
+				player.velocity = pair.global_basis * self_global_transform.basis.inverse() * player.velocity
+				player.global_transform = pair.global_transform * self_global_transform.affine_inverse() * player.global_transform
+				
 				return
 		cooldown = false
 		
@@ -98,7 +97,7 @@ func _resized() -> void:
 func set_dimensions(new_dimensions : Vector2) -> void:
 	dimensions = new_dimensions
 	if !is_node_ready(): await ready
-	$Mesh.scale = Vector3(dimensions.x*0.5-0.05,dimensions.y*0.5-0.05,0.45)
+	$Mesh.scale = Vector3(dimensions.x*0.5-0.01,dimensions.y*0.5-0.01,0.45)
 	$Area/CollisionShape3D.shape.size = Vector3(dimensions.x,dimensions.y,1)
 	if pair and pair.dimensions != dimensions:
 		pair.set_dimensions(dimensions)
