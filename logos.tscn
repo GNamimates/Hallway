@@ -344,6 +344,7 @@ theme_override_constants/separation = 10
 alignment = 1
 
 [node name="Title" type="Label" parent="CanvasLayer/Main/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("13_yiwrn")
