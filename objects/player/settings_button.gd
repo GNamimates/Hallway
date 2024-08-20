@@ -37,4 +37,4 @@ func _on_pressed() -> void:
 
 
 func _on_shadow_button_toggled(toggled_on:bool) -> void:
-	Settings.set_setting("shadow",toggled_on)
+	Settings.set_setting("shadows",toggled_on)
