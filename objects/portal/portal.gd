@@ -11,7 +11,7 @@ class_name Portal
 var cooldown = false
 
 func _setting_changed(key : String,value) -> void:
-	if key == "half_portal_resolution":
+	if key == "portal_resolution":
 		_resized()
 
 func set_pair(new):
@@ -22,18 +22,18 @@ func set_pair(new):
 
 func _ready() -> void:
 	Settings.settings_changed.connect(_setting_changed)
-	if Transition.player is Player:
-		player = Transition.player
+	if %Player is Player:
+		player = %Player
 	$Mesh.material_override = $Mesh.material_override.duplicate()
 	$Mesh.material_override.set_shader_parameter("portal",$SubViewport.get_texture())
 	
 	# Resizing subviewports
 	#if Engine.is_editor_hint(): EditorInterface.get_editor_viewport_3d(0).size_changed.connect(_resized)
-	#else:
+	#else: 
 	get_tree().root.size_changed.connect(_resized)
 	_resized()
-	if !Engine.is_editor_hint():
-		get_viewport().get_camera_3d().transform_changed.connect(_transform_changed)
+	#if !Engine.is_editor_hint():
+	get_viewport().get_camera_3d().transform_changed.connect(_transform_changed)
 
 func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
@@ -51,16 +51,17 @@ func _transform_changed() -> void:
 		#else: 
 		cam = get_viewport().get_camera_3d()
 		
-		if cam.global_position.distance_to(global_position) < 20:
-			$SubViewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
-			visible = true
-		else:
-			$SubViewport.render_target_update_mode = SubViewport.UPDATE_DISABLED
-			visible = false
 		# Camera
 		var self_global_transform = global_transform
 		self_global_transform.basis = self_global_transform.basis.rotated(self_global_transform.basis.y.normalized(),PI)
 		var local2portal = self_global_transform.affine_inverse() * cam.global_transform
+		
+		
+		if ($Visible.is_on_screen()):
+			$SubViewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
+		else:
+			$SubViewport.render_target_update_mode = SubViewport.UPDATE_DISABLED
+		
 		
 		portal_camera.global_transform = pair.global_transform * local2portal
 		portal_camera.fov = cam.fov
@@ -88,19 +89,17 @@ func _transform_changed() -> void:
 
 func _resized() -> void:
 	if !is_node_ready(): await ready
-	var multiplier = 1
-	if Settings.settings.half_portal_resolution:
-		multiplier = 0.5
+	var multiplier = Settings.settings.portal_resolution
 	#if Engine.is_editor_hint():
 	#	$SubViewport.size = EditorInterface.get_editor_viewport_3d(0).size * multiplier
 	#else:
-	
 	$SubViewport.size = get_tree().root.size * multiplier
 
 
 func set_dimensions(new_dimensions : Vector2) -> void:
 	dimensions = new_dimensions
 	if !is_node_ready(): await ready
+	$Visible.aabb = AABB(Vector3(-dimensions.x*0.5,-dimensions.y*0.5,-0.5),Vector3(dimensions.x,dimensions.y,1))
 	$Mesh.scale = Vector3(dimensions.x*0.5-0.01,dimensions.y*0.5-0.01,0.45)
 	$Area/CollisionShape3D.shape.size = Vector3(dimensions.x,dimensions.y,1)
 	if pair and pair.dimensions != dimensions:

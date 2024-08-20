@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dim8cuvgdypby"]
+[gd_scene load_steps=39 format=3 uid="uid://dim8cuvgdypby"]
 
 [ext_resource type="PackedScene" uid="uid://cns2g0524lvn1" path="res://objects/wall/wall.tscn" id="1_wp04t"]
 [ext_resource type="Material" uid="uid://dut032u47qwpq" path="res://objects/wall/materials/wall_black.tres" id="2_p4l22"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://b2f8oc8vsoyuk" path="res://levels/rotate.tscn" id="21_l85uj"]
 [ext_resource type="PackedScene" uid="uid://cui6cmx4mceqy" path="res://levels/tradeshall.tscn" id="22_bnxsr"]
 [ext_resource type="PackedScene" uid="uid://bnanc1npbvhnl" path="res://levels/table.tscn" id="23_xfkkm"]
+[ext_resource type="PackedScene" uid="uid://cy5jmqw805jjb" path="res://levels/recursion.tscn" id="24_g2wdg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_na0ub"]
 albedo_texture = ExtResource("4_8f85w")
@@ -477,6 +478,11 @@ level = ExtResource("22_bnxsr")
 layout_mode = 2
 text = "5"
 level = ExtResource("23_xfkkm")
+
+[node name="Recursion" parent="CanvasLayer/LevelSelection/CenterContainer/VBoxContainer/GridContainer" instance=ExtResource("9_8xuur")]
+layout_mode = 2
+text = "6"
+level = ExtResource("24_g2wdg")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/LevelSelection/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 20)

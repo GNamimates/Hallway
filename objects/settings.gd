@@ -3,7 +3,7 @@ extends Node
 
 var settings = {
 	"shadows" : true,
-	"half_portal_resolution" : false,
+	"portal_resolution" : 1,
 	"sensitivity" : 50.0,
 	"show_fps": false,
 	"show_timer": false,

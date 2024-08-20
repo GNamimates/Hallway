@@ -1,0 +1,247 @@
+[gd_scene load_steps=21 format=3 uid="uid://cy5jmqw805jjb"]
+
+[ext_resource type="PackedScene" uid="uid://dgosnbsq0g0h3" path="res://objects/orb/orb.tscn" id="1_gpxe5"]
+[ext_resource type="PackedScene" uid="uid://dklx8id5n584t" path="res://objects/player/player.tscn" id="2_a2v2s"]
+[ext_resource type="PackedScene" uid="uid://cns2g0524lvn1" path="res://objects/wall/wall.tscn" id="3_xw048"]
+[ext_resource type="Texture2D" uid="uid://c8miyac0vgwwj" path="res://objects/wall/materials/textures/concrete_flooring.png" id="4_hx28o"]
+[ext_resource type="Texture2D" uid="uid://rt2tcesn65yu" path="res://objects/wall/materials/textures/concrete_flooring_n.png" id="5_uw4m2"]
+[ext_resource type="Texture2D" uid="uid://k58lemup63ey" path="res://objects/wall/materials/textures/wall_white.png" id="6_l1qt5"]
+[ext_resource type="Texture2D" uid="uid://c5ggjra614pbw" path="res://objects/wall/materials/textures/wall_n.png" id="7_kgumi"]
+[ext_resource type="Material" uid="uid://dut032u47qwpq" path="res://objects/wall/materials/wall_black.tres" id="8_tcdu4"]
+[ext_resource type="Environment" uid="uid://drulnpmvmtpbc" path="res://environment.tres" id="9_2x1y3"]
+[ext_resource type="PackedScene" uid="uid://jkeyedilmoer" path="res://objects/portal/portal.tscn" id="10_gs1el"]
+[ext_resource type="PackedScene" uid="uid://bjw5n4nyles4o" path="res://objects/light/lamp.tscn" id="11_ek5vl"]
+[ext_resource type="Material" uid="uid://cghdstt0fv4lc" path="res://objects/wall/materials/warning.tres" id="12_2g3gq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1aeja"]
+albedo_texture = ExtResource("4_hx28o")
+normal_enabled = true
+normal_scale = 0.32
+normal_texture = ExtResource("5_uw4m2")
+uv1_offset = Vector3(-5, -0.5, -5)
+uv1_triplanar = true
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xtad1"]
+albedo_texture = ExtResource("6_l1qt5")
+metallic = 0.61
+roughness = 0.64
+normal_enabled = true
+normal_scale = -0.45
+normal_texture = ExtResource("7_kgumi")
+uv1_offset = Vector3(-4, -1, -0.5)
+uv1_triplanar = true
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1g37o"]
+albedo_texture = ExtResource("6_l1qt5")
+metallic = 0.61
+roughness = 0.64
+normal_enabled = true
+normal_scale = -0.45
+normal_texture = ExtResource("7_kgumi")
+uv1_offset = Vector3(-4, -1, -0.5)
+uv1_triplanar = true
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kup3v"]
+albedo_texture = ExtResource("6_l1qt5")
+metallic = 0.61
+roughness = 0.64
+normal_enabled = true
+normal_scale = -0.45
+normal_texture = ExtResource("7_kgumi")
+uv1_offset = Vector3(-0.5, -1, -5)
+uv1_triplanar = true
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cuhsy"]
+albedo_texture = ExtResource("4_hx28o")
+normal_enabled = true
+normal_scale = 0.32
+normal_texture = ExtResource("5_uw4m2")
+uv1_offset = Vector3(-32, -0.5, -32)
+uv1_triplanar = true
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bgam5"]
+albedo_texture = ExtResource("6_l1qt5")
+metallic = 0.61
+roughness = 0.64
+normal_enabled = true
+normal_scale = -0.45
+normal_texture = ExtResource("7_kgumi")
+uv1_offset = Vector3(-0.5, -1, -2)
+uv1_triplanar = true
+texture_filter = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cnppu"]
+albedo_texture = ExtResource("6_l1qt5")
+metallic = 0.61
+roughness = 0.64
+normal_enabled = true
+normal_scale = -0.45
+normal_texture = ExtResource("7_kgumi")
+uv1_offset = Vector3(-0.5, -1, -2)
+uv1_triplanar = true
+texture_filter = 2
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_j76mb"]
+exposure_multiplier = 1.045
+
+[node name="Node" type="Node"]
+
+[node name="Orb" parent="." instance=ExtResource("1_gpxe5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 9, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_a2v2s")]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 0.5, 0)
+
+[node name="Wall8" parent="." instance=ExtResource("3_xw048")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, 0)
+dimensions = Vector3(6, 1, 6)
+material = SubResource("StandardMaterial3D_1aeja")
+
+[node name="Wall2" parent="." instance=ExtResource("3_xw048")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -3.5)
+dimensions = Vector3(7, 2, 1)
+material = SubResource("StandardMaterial3D_xtad1")
+
+[node name="Wall3" parent="." instance=ExtResource("3_xw048")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 3.5, -3.5)
+dimensions = Vector3(7, 4, 1)
+material = ExtResource("8_tcdu4")
+
+[node name="Wall4" parent="." instance=ExtResource("3_xw048")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 3.5)
+dimensions = Vector3(7, 2, 1)
+material = SubResource("StandardMaterial3D_1g37o")
+
+[node name="Wall5" parent="." instance=ExtResource("3_xw048")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 3.5, 3.5)
+dimensions = Vector3(7, 4, 1)
+material = ExtResource("8_tcdu4")
+
+[node name="Wall6" parent="." instance=ExtResource("3_xw048")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.5, 0)
+dimensions = Vector3(1, 2, 6)
+material = SubResource("StandardMaterial3D_kup3v")
+
+[node name="Wall7" parent="." instance=ExtResource("3_xw048")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 3.5, 0)
+dimensions = Vector3(1, 4, 6)
+material = ExtResource("8_tcdu4")
+
+[node name="Wall14" parent="." instance=ExtResource("3_xw048")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 1)
+dimensions = Vector3(64, 1, 64)
+material = SubResource("StandardMaterial3D_cuhsy")
+
+[node name="Wall9" parent="." instance=ExtResource("3_xw048")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, 2.5)
+dimensions = Vector3(1, 2, 3)
+material = SubResource("StandardMaterial3D_bgam5")
+
+[node name="Wall10" parent="." instance=ExtResource("3_xw048")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 3.5, 2.5)
+dimensions = Vector3(1, 4, 3)
+material = ExtResource("8_tcdu4")
+
+[node name="Wall54" parent="." instance=ExtResource("3_xw048")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 5, 0)
+dimensions = Vector3(1, 1, 2)
+material = ExtResource("8_tcdu4")
+
+[node name="Wall11" parent="." instance=ExtResource("3_xw048")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, -2.5)
+dimensions = Vector3(1, 2, 3)
+material = SubResource("StandardMaterial3D_cnppu")
+
+[node name="Wall12" parent="." instance=ExtResource("3_xw048")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 3.5, -2.5)
+dimensions = Vector3(1, 4, 3)
+material = ExtResource("8_tcdu4")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("9_2x1y3")
+camera_attributes = SubResource("CameraAttributesPractical_j76mb")
+
+[node name="Portal" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("10_gs1el")]
+transform = Transform3D(-4.37114e-09, 4.37114e-09, -0.1, -3.55271e-16, 0.1, 4.37114e-09, 0.1, 5.4634e-16, -4.37114e-09, 2, 1.5, 0)
+pair = NodePath("../Portal7")
+dimensions = Vector2(20, 20)
+
+[node name="Portal3" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("10_gs1el")]
+transform = Transform3D(0.1, 5.55112e-16, -9.31323e-09, -1.77529e-16, 0.1, 4.37114e-09, 9.31323e-09, -4.37114e-09, 0.1, 1, 1.5, -1)
+pair = NodePath("../Portal6")
+dimensions = Vector2(20, 20)
+
+[node name="Portal4" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("10_gs1el")]
+transform = Transform3D(4.94209e-09, -4.37114e-09, 0.1, -1.77529e-16, 0.1, 4.37114e-09, -0.1, -8.77154e-18, 4.94209e-09, 0, 1.5, 0)
+pair = NodePath("../Portal2")
+dimensions = Vector2(20, 20)
+
+[node name="Portal5" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("10_gs1el")]
+transform = Transform3D(-0.1, 5.37568e-16, 5.70949e-10, -1.77529e-16, 0.1, 4.37114e-09, -5.70949e-10, 4.37114e-09, -0.1, 1, 1.5, 1)
+pair = NodePath("../Portal8")
+dimensions = Vector2(20, 20)
+
+[node name="Portal9" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("10_gs1el")]
+transform = Transform3D(-0.1, 5.37568e-16, 5.70949e-10, -5.70949e-10, -1.11759e-08, -0.1, 2.22045e-16, -0.1, 0, 1, 2.5, 0)
+pair = NodePath("../Portal10")
+dimensions = Vector2(20, 20)
+
+[node name="Portal2" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("10_gs1el")]
+transform = Transform3D(-4.36896e-08, 0, -0.999502, 0, 0.999502, 0, 0.999502, 0, -4.36896e-08, -10, 10.5, 0)
+pair = NodePath("../Portal4")
+dimensions = Vector2(20, 20)
+
+[node name="Portal6" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("10_gs1el")]
+transform = Transform3D(-0.999502, 0, 8.73793e-08, 0, 0.999502, 0, -8.73793e-08, 0, -0.999502, 0, 10.5, -10)
+pair = NodePath("../Portal3")
+dimensions = Vector2(20, 20)
+
+[node name="Portal7" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("10_gs1el")]
+transform = Transform3D(-4.36896e-08, 0, 0.999502, 0, 0.999502, 0, -0.999502, 0, -4.36896e-08, 10, 10.5, 0)
+pair = NodePath("../Portal")
+dimensions = Vector2(20, 20)
+
+[node name="Portal8" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("10_gs1el")]
+transform = Transform3D(0.999502, 0, -2.13163e-14, 0, 0.999502, 0, 2.13163e-14, 0, 0.999502, 0, 10.5, 10)
+pair = NodePath("../Portal5")
+dimensions = Vector2(20, 20)
+
+[node name="Portal10" parent="." node_paths=PackedStringArray("pair") instance=ExtResource("10_gs1el")]
+transform = Transform3D(0.999502, 0, -2.13163e-14, 2.13163e-14, -4.36896e-08, 0.999502, -9.31764e-22, -0.999502, -4.36896e-08, 0, 20.5, 0)
+pair = NodePath("../Portal9")
+dimensions = Vector2(20, 20)
+
+[node name="Lamp" parent="." instance=ExtResource("11_ek5vl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4.46986, 0)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Wall32" parent="." instance=ExtResource("3_xw048")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.45, 2.5, 0.9)
+dimensions = Vector3(0.375, 4, 0.1875)
+material = ExtResource("12_2g3gq")
+
+[node name="Wall34" parent="." instance=ExtResource("3_xw048")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 4.4, 5.96046e-08)
+dimensions = Vector3(0.375, 0.1875, 2)
+material = ExtResource("12_2g3gq")
+
+[node name="Wall33" parent="." instance=ExtResource("3_xw048")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.45, 2.5, -0.9)
+dimensions = Vector3(0.375, 4, 0.1875)
+material = ExtResource("12_2g3gq")
+
+[node name="Lamp5" parent="." instance=ExtResource("11_ek5vl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.5, 4.26986, 0.1)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21, 0)
+light_energy = 3.873
+shadow_enabled = true
+omni_range = 39.506
